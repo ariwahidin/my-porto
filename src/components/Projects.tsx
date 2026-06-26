@@ -1,28 +1,31 @@
+"use client";
+
 import Image from "next/image";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Warehouse Management System",
     description:
-      "A full-stack e-commerce application with product management, shopping cart, and payment integration.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
-    image: "https://picsum.photos/seed/ecommerce/600/400",
+      "Inventory and warehouse management system with best performance including integration with ERP like SAP and Oracle NetSuite, Integration with E-commerce like Shopee, Lazada, Tokopedia, etc.",
+    tags: ["Next.js", "Go", "TypeScript", "Tailwind CSS", "Microsoft SQL Server"],
+    image: "/images/img-1.png",
     url: "https://logspeedy.com",
   },
   {
-    title: "Dashboard Analytics",
+    title: "Transportation Management System",
     description:
-      "Interactive analytics dashboard with real-time data visualization and reporting features.",
-    tags: ["React", "Chart.js", "Node.js", "REST API"],
-    image: "https://picsum.photos/seed/dashboard/600/400",
+      "Transportation management system with real-time tracking including integration with external system",
+    tags: ["ASP.NET", "SQL Server"],
+    image: "/images/tms-3.png",
     url: "https://logspeedy.com",
   },
   {
-    title: "Task Management App",
+    title: "Container Depot Management",
     description:
-      "A collaborative task management tool with drag-and-drop, real-time updates, and team features.",
-    tags: ["Next.js", "WebSocket", "MongoDB", "Docker"],
-    image: "https://picsum.photos/seed/taskapp/600/400",
+      "Container depot management system with real-time tracking and inventory management capabilities.",
+    tags: ["ASP.NET Core", "WebSocket", "SQL Server"],
+    image: "/images/depot-1.png",
     url: "https://logspeedy.com",
   },
   {
@@ -52,10 +55,15 @@ const projects = [
 ];
 
 export default function Projects() {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.1 });
+
   return (
     <section
+      ref={ref}
       id="projects"
-      className="py-32 px-6 bg-[var(--surface)]"
+      className={`py-32 px-6 bg-[var(--surface)] transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      }`}
     >
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
@@ -70,13 +78,16 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <a
               key={project.title}
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-2xl bg-[var(--background)] border border-[var(--border)] overflow-hidden hover:border-[var(--text-secondary)]/30 transition-all duration-300"
+              className={`group rounded-2xl bg-[var(--background)] border border-[var(--border)] overflow-hidden hover:border-[var(--text-secondary)]/30 transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Project Image */}
               <div className="relative h-48 bg-[var(--surface)] overflow-hidden">

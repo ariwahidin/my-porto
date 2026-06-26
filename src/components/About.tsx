@@ -1,6 +1,18 @@
+"use client";
+
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 export default function About() {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
+
   return (
-    <section id="about" className="py-32 px-6 bg-[var(--surface)]">
+    <section
+      ref={ref}
+      id="about"
+      className={`py-32 px-6 bg-[var(--surface)] transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      }`}
+    >
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">
@@ -30,14 +42,14 @@ export default function About() {
           {/* About Content */}
           <div className="space-y-6">
             <p className="text-[var(--foreground)] leading-relaxed text-lg">
-              I'm a passionate web developer with experience in building modern,
+              I&apos;m a passionate web developer with experience in building modern,
               responsive web applications. I love working with the latest
               technologies and frameworks to create solutions that make a
               difference.
             </p>
             <p className="text-[var(--text-secondary)] leading-relaxed text-lg">
               My journey in software development started with a curiosity about
-              how things work on the web. Since then, I've been continuously
+              how things work on the web. Since then, I&apos;ve been continuously
               learning and improving my skills to deliver high-quality
               applications.
             </p>

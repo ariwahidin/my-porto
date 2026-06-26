@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function Contact() {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -66,7 +68,13 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 px-6">
+    <section
+      ref={ref}
+      id="contact"
+      className={`py-32 px-6 transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      }`}
+    >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">
