@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function About() {
@@ -25,17 +26,21 @@ export default function About() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Avatar / Illustration */}
+          {/* Profile Photo */}
           <div className="flex justify-center">
             <div className="relative">
-              <div className="w-72 h-72 md:w-80 md:h-80 rounded-3xl bg-[var(--background)] border border-[var(--border)] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-7xl md:text-8xl mb-4">👨‍💻</div>
-                  <p className="text-sm text-[var(--text-secondary)] font-mono">
-                    &lt;developer /&gt;
-                  </p>
-                </div>
+              <div className="w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden bg-[var(--background)] border border-[var(--border)] shadow-lg">
+                <Image
+                  src="/images/profil.jpeg"
+                  alt="Ari Wahidin"
+                  width={320}
+                  height={320}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
+              {/* Optional decorative element */}
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[var(--apple-blue)] rounded-2xl -z-10 opacity-20" />
             </div>
           </div>
 

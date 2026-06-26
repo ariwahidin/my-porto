@@ -15,9 +15,9 @@ export default function Footer() {
             &copy; {currentYear} Ari Wahidin. All rights reserved.
           </p>
 
-          <p className="text-sm text-[var(--text-secondary)]">
+          {/* <p className="text-sm text-[var(--text-secondary)]">
             Built with Next.js & Tailwind CSS
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

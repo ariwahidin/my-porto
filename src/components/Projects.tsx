@@ -10,7 +10,7 @@ const projects = [
       "Inventory and warehouse management system with best performance including integration with ERP like SAP and Oracle NetSuite, Integration with E-commerce like Shopee, Lazada, Tokopedia, etc.",
     tags: ["Next.js", "Go", "TypeScript", "Tailwind CSS", "Microsoft SQL Server"],
     image: "/images/img-1.png",
-    url: "https://logspeedy.com",
+    url: "https://wms.logspeedy.com",
   },
   {
     title: "Transportation Management System",
@@ -29,27 +29,27 @@ const projects = [
     url: "https://logspeedy.com",
   },
   {
-    title: "API Gateway Service",
+    title: "Point of Sales",
     description:
-      "Microservice API gateway with rate limiting, authentication, and request routing.",
-    tags: ["Go", "gRPC", "Redis", "Docker"],
-    image: "https://picsum.photos/seed/apigateway/600/400",
+      "Point of sale system with inventory management, customer management, and payment processing capabilities.",
+    tags: ["PHP", "MySQL"],
+    image: "/images/pos-01.png",
     url: "https://logspeedy.com",
   },
   {
-    title: "Video Streaming Service",
+    title: "Sales Visit Management",
     description:
-      "Video streaming platform with upload, transcoding, and adaptive streaming capabilities.",
+      "Sales visit management system for sales operationals, stock control, including taking order, new customer registration etc.",
     tags: ["Node.js", "FFmpeg", "AWS S3", "HLS"],
-    image: "https://picsum.photos/seed/streaming/600/400",
-    url: "https://logspeedy.com",
+    image: "/images/sales-1.png",
+    url: "https://salesvisit.logspeedy.com",
   },
   {
-    title: "Warehouse Management",
+    title: "Safety Management System",
     description:
-      "Inventory and warehouse management system with barcode scanning and real-time tracking.",
-    tags: ["React", "Go", "PostgreSQL", "REST API"],
-    image: "https://picsum.photos/seed/warehouse/600/400",
+      "Safety management system with real-time monitoring and alerting capabilities.",
+    tags: ["Next.js", "Go", "TypeScript", "Tailwind CSS"],
+    image: "/images/safe-01.png",
     url: "https://logspeedy.com",
   },
 ];
@@ -61,9 +61,8 @@ export default function Projects() {
     <section
       ref={ref}
       id="projects"
-      className={`py-32 px-6 bg-[var(--surface)] transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-      }`}
+      className={`py-32 px-6 bg-[var(--surface)] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+        }`}
     >
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
@@ -84,9 +83,8 @@ export default function Projects() {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group rounded-2xl bg-[var(--background)] border border-[var(--border)] overflow-hidden hover:border-[var(--text-secondary)]/30 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
+              className={`group rounded-2xl bg-[var(--background)] border border-[var(--border)] overflow-hidden hover:border-[var(--text-secondary)]/30 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Project Image */}
