@@ -18,7 +18,7 @@ const projects = [
       "Transportation management system with real-time tracking including integration with external system",
     tags: ["ASP.NET", "SQL Server"],
     image: "/images/tms-3.png",
-    url: "https://logspeedy.com",
+    url: "https://tms.logspeedy.com",
   },
   {
     title: "Container Depot Management",
@@ -26,7 +26,7 @@ const projects = [
       "Container depot management system with real-time tracking and inventory management capabilities.",
     tags: ["ASP.NET Core", "WebSocket", "SQL Server"],
     image: "/images/depot-1.png",
-    url: "https://logspeedy.com",
+    url: "https://cdms.logspeedy.com",
   },
   {
     title: "Point of Sales",
@@ -40,7 +40,7 @@ const projects = [
     title: "Sales Visit Management",
     description:
       "Sales visit management system for sales operationals, stock control, including taking order, new customer registration etc.",
-    tags: ["Node.js", "FFmpeg", "AWS S3", "HLS"],
+    tags: ["Next.js", "Kotlin", "Go", "SQL Server"],
     image: "/images/sales-1.png",
     url: "https://salesvisit.logspeedy.com",
   },
@@ -50,7 +50,7 @@ const projects = [
       "Safety management system with real-time monitoring and alerting capabilities.",
     tags: ["Next.js", "Go", "TypeScript", "Tailwind CSS"],
     image: "/images/safe-01.png",
-    url: "https://logspeedy.com",
+    url: "https://sms.logspeedy.com",
   },
 ];
 
